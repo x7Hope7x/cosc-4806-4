@@ -37,6 +37,7 @@ class User {
   		if (password_verify($password, $rows['password_hash'])) {
   			$_SESSION['auth'] = 1;
   			$_SESSION['username'] = ucwords($username);
+        $_SESSION['userid'] = $rows['id'];
   			unset($_SESSION['failedAuth']);
         $this->logAttempt($username, "good");
         unset($_SESSION['last_submit_time']);

@@ -32,7 +32,7 @@
                 font-size: 16px;
             }
             .welcome-container a {
-                color: #007BFF;
+                color: #007BFE;
                 text-decoration: none;
             }
             .welcome-container a:hover {

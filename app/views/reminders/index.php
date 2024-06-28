@@ -77,7 +77,7 @@
         }
         .add-reminder input[type="text"] {
             width: calc(100% - 22px);
-            padding: 10px;
+            padding: 20px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;

@@ -7,11 +7,7 @@
         <title>Welcome</title>
         <style>
             body {
-                /* font-family: Arial, sans-serif;
-                background-color: #f0f0f0;
-                display: flex;
                 
-                height: 100vh; */
             }
             .welcome-container {
                 
@@ -25,7 +21,7 @@
                 
             }
             .welcome-container p {
-                /* Add any styling for the paragraphs here */
+                
                 margin: 10px 0;
                 
                 font-family: Arial, sans-serif;

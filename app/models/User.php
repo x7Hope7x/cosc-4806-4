@@ -11,16 +11,6 @@ class User {
        
     }
 
-    
-
-    // public function test () {
-    //   $db = db_connect();
-    //   $statement = $db->prepare("select * from users;");
-    //   $statement->execute();
-    //   $rows = $statement->fetch(PDO::FETCH_ASSOC);
-    //   return $rows;
-    // }
-
     public function authenticate($username, $password) {
         /*
          * if username and password good then

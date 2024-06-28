@@ -9,22 +9,18 @@ class Reminder {
     }
 
     public function get_all_reminders ($userid) {
+        // gets the list of all reminders from the database.
         $db = db_connect();
         $statement = $db->prepare("select * from reminders WHERE user_id = :userid");
         $statement->bindValue( ':userid', $userid);
         $statement->execute();
         $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-        // foreach ($rows as $row){
-        //     $_SESSION['reminder_id[]'] = $row['id'];
-        // }  
-        // foreach ($data['reminders'] as $reminder) {
-        //     header('Location: /reminders/index');
-        //     echo "<p>" . $reminder['subject'] . $reminder['created_at'].'</p>';
-        // }
+        
         return $rows;
     }
 
     public function update_reminder ($reminder_id, $subject) {
+        // takes Reminder_ID and Subject as args to update the reminder in the database.
         $db = db_connect();
         $sql = "UPDATE reminders SET subject = :subject WHERE id = :id";
         $statement = $db -> prepare($sql);
@@ -32,10 +28,11 @@ class Reminder {
         $statement->bindValue(":id", $reminder_id);
         $statement->execute();
         header('Location: /reminders');
-        // do update statement
+        
     }
     
     public function create_reminder ($subject) {
+        // creates a new Subject reminder in the database.
         $db = db_connect();
         $sql = "INSERT INTO reminders (user_id,subject) VALUES (?,?)";
         $statement = $db->prepare($sql);
@@ -44,6 +41,7 @@ class Reminder {
     }
     
     public function delete_reminder ($reminder_id) {
+        // delete a reminder based on its reminder_ID
         $db = db_connect();
         $sql = "DELETE FROM reminders WHERE id = :id;";
         $statement = $db->prepare($sql);
@@ -52,7 +50,7 @@ class Reminder {
 
         header('Location: /reminders ');
         
-        // do delete
+        
     }
 }
 ?>

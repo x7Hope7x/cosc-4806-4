@@ -8,7 +8,7 @@ class Freeze extends Controller {
   
   public function wait(){
 
-    // $user = $this->model('User'); 
+    
     unset($_SESSION['failedAuth']);
     header('Location: /login');
     
